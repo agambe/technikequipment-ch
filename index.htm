@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Webshop</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="images/logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="header-right">
+        <input type="text" placeholder="Suchen" class="search-bar" />
+        <a href="javascript:void(0);" onclick="showSection('home')"
+          >Startseite</a
+        >
+        <a href="javascript:void(0);" onclick="showSection('account')"
+          >Mein Konto</a
+        >
+        <a
+          href="javascript:void(0);"
+          onclick="showSection('shopping-cart')"
+          class="cart"
+          >Warenkorb<span class="cart-count">0</span></a
+        >
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="#elektronik" onclick="showSection('elektronik')"
+            >Elektronik</a
+          >
+        </li>
+        <li><a href="#cables" onclick="showSection('cables')">Kabel</a></li>
+        <li><a href="#gaming" onclick="showSection('gaming')">Gaming</a></li>
+        <li><a href="#zubehor" onclick="showSection('zubehor')">Zubehör</a></li>
+        <li>
+          <a href="#mehr" onclick="showSection('mehr')">Mehr entdecken</a>
+        </li>
+        <li>
+          <a href="#sale" onclick="showSection('sale')" class="sale">SALE</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="home" class="content-section">
+        <h2>Startseite</h2>
+        <p>Unsere Neuheiten!</p>
+      </section>
+
+      <section id="account" class="content-section" style="display: none">
+        <h2>Account</h2>
+        <div id="login-form">
+          <h3>Login</h3>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
+          <button onclick="login()">Login</button>
+        </div>
+
+        <div id="register-form">
+          <h3>Register</h3>
+          <input type="text" id="register-username" placeholder="Username" />
+          <input
+            type="password"
+            id="register-password"
+            placeholder="Password"
+          />
+          <button onclick="register()">Register</button>
+        </div>
+      </section>
+
+      <section id="shopping-cart" class="content-section">
+        <h2>Einkaufswagen</h2>
+      </section>
+
+      <section id="elektronik" class="content-section" style="display: none">
+        <h2>Elektronik</h2>
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1" />
+          <p>Product 1 - $10.00</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="cables" class="content-section" style="display: none">
+        <h2>Kabel</h2>
+        <div class="product">
+          <img
+            src="images/products/cables/usb type-c/usb type-c black cable title.png"
+            alt="usb type-c cable"
+          />
+          <p>usb type-c black - CHF 5.95</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="gaming" class="content-section" style="display: none">
+        <h2>Gaming</h2>
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1" />
+          <p>Product 1 - $10.00</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="zubehor" class="content-section" style="display: none">
+        <h2>Zubehör</h2>
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1" />
+          <p>Product 1 - $10.00</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="mehr" class="content-section" style="display: none">
+        <h2>Mehr entdecken</h2>
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1" />
+          <p>Product 1 - $10.00</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="sale" class="content-section" style="display: none">
+        <h2>Sale</h2>
+        <div class="product">
+          <img src="product1.jpg" alt="Product 1" />
+          <p>Product 1 - $10.00</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="product2.jpg" alt="Product 2" />
+          <p>Product 2 - $20.00</p>
+          <button>Add to Cart</button>
+        </div>
+      </section>
+
+      <section id="about" class="content-section" style="display: none">
+        <h2>Über uns bei Technikequipment.ch</h2>
+        <p>
+          Willkommen bei Technikequipment.ch, Ihrem bevorzugten Ziel für
+          hochwertige Technik zu unschlagbaren Preisen in der Schweiz. Seit
+          unserer Gründung haben wir es uns zur Aufgabe gemacht, unseren Kunden
+          Zugang zu den neuesten technologischen Innovationen zu bieten, ohne
+          dabei Ihr Budget zu belasten. Unser Sortiment umfasst eine breite
+          Auswahl an Produkten von renommierten Marken, sorgfältig ausgewählt,
+          um Ihren Bedürfnissen in Sachen Qualität, Leistung und Preis gerecht
+          zu werden. Ob Sie auf der Suche nach einem neuen Smartphone, einem
+          leistungsstarken Laptop, Unterhaltungselektronik oder Zubehör sind -
+          bei Technikequipment.ch finden Sie garantiert das Passende. Unser
+          engagiertes Team aus Technikexperten steht Ihnen jederzeit zur
+          Verfügung, um Sie bei der Auswahl des perfekten Produkts zu
+          unterstützen und Ihnen ein reibungsloses Einkaufserlebnis zu bieten.
+          Kundenzufriedenheit steht bei uns an erster Stelle, und wir streben
+          stets danach, Ihre Erwartungen zu übertreffen. Entdecken Sie jetzt
+          unser Sortiment und erleben Sie, warum Technikequipment.ch Ihre erste
+          Wahl für erschwingliche Technik in der Schweiz ist.
+        </p>
+      </section>
+
+      <section id="contact" class="content-section" style="display: none">
+        <h2>Kontakt</h2>
+        <p>
+          Für Fragen, Anregungen oder Unterstützung stehen wir Ihnen gerne zur
+          Verfügung. Kontaktieren Sie uns jederzeit per E-Mail unter
+          <a href="mailto:technikequipment@gmail.com"
+            >technikequipment@gmail.com</a
+          >. Unser Team wird sich umgehend um Ihr Anliegen kümmern und Ihnen
+          weiterhelfen. Wir freuen uns darauf, von Ihnen zu hören!
+        </p>
+      </section>
+
+      <style>
+        ol {
+          list-style-type: decimal; /* or any other type you prefer */
+        }
+        ol li {
+          font-weight: normal; /* Reset font weight to normal for all list items */
+          margin-bottom: 10px; /* Add some spacing between list items */
+        }
+        ol li::marker {
+          font-weight: bold; /* Make the numbering (marker) bold */
+        }
+      </style>
+
+      <section id="faq" class="content-section" style="display: none">
+        <h2>Häufig gestellte Fragen</h2>
+        <ol>
+          <li>
+            <h3>Wie kann ich meine Bestellung verfolgen?</h3>
+            Sie erhalten eine Versandbestätigung per E-Mail mit einem
+            Tracking-Link, sobald Ihre Bestellung versandt wurde. Mit diesem
+            Link können Sie den Lieferstatus Ihrer Bestellung ganz einfach
+            verfolgen.
+          </li>
+          <li>
+            <h3>Welche Zahlungsmethoden akzeptieren Sie?</h3>
+            Wir akzeptieren Zahlungen per Kreditkarte (Visa, MasterCard,
+            American Express) sowie PayPal für eine sichere und bequeme
+            Abwicklung Ihrer Bestellung.
+          </li>
+          <li>
+            <h3>Kann ich meine Bestellung ändern oder stornieren?</h3>
+            Wir bemühen uns, Bestellungen schnell zu bearbeiten. Kontaktieren
+            Sie uns bitte umgehend unter technikequipment@gmail.com, falls Sie
+            Änderungen vornehmen oder Ihre Bestellung stornieren möchten. Wir
+            werden unser Bestes tun, um Ihren Wünschen nachzukommen.
+          </li>
+          <li>
+            <h3>
+              Was mache ich, wenn ein Produkt defekt ist oder nicht meinen
+              Erwartungen entspricht?
+            </h3>
+            Bitte kontaktieren Sie unser Kundenservice-Team unter
+            technikequipment@gmail.com, um eine Lösung für Ihr Anliegen zu
+            finden. Wir stehen Ihnen zur Seite, um sicherzustellen, dass Sie mit
+            Ihrem Einkauf zufrieden sind.
+          </li>
+          <li>
+            <h3>Übernehmen Sie die Kosten für Rücksendungen?</h3>
+            Nein, wir übernehmen die Kosten für Rücksendungen nicht. Bitte
+            stellen Sie sicher, dass die Rücksendung gemäß unseren
+            Rückgabebedingungen erfolgt, um eine reibungslose Abwicklung zu
+            gewährleisten.
+          </li>
+          <li>
+            <h3>Wie lange dauert der Versand?</h3>
+            In der Regel dauert der Versand innerhalb der Schweiz 1-2 Werktage
+            nach Versandbestätigung. Internationale Lieferzeiten können
+            variieren.
+          </li>
+        </ol>
+        <p>
+          Für weitere Fragen oder spezielle Anfragen stehen wir Ihnen jederzeit
+          gerne zur Verfügung. Sie erreichen uns per E-Mail unter
+          <a href="mailto:technikequipment@gmail.com"
+            >technikequipment@gmail.com</a
+          >.
+        </p>
+      </section>
+
+      <section id="shipping" class="content-section" style="display: none">
+        <h2>Versandinformationen</h2>
+        <p>
+          Wir versenden alle Bestellungen mit A-Post über die Schweizer Post, um
+          Ihnen eine schnelle und zuverlässige Lieferung zu gewährleisten. Bitte
+          beachten Sie, dass wir für verlorene oder beschädigte Sendungen keine
+          Haftung übernehmen können. Für weitere Informationen zum Versand oder
+          spezielle Anfragen kontaktieren Sie uns bitte über
+          <a href="mailto:technikequipment@gmail.com"
+            >technikequipment@gmail.com</a
+          >. Unsere Kundenbetreuer helfen Ihnen gerne weiter.
+        </p>
+      </section>
+
+      <section id="return" class="content-section" style="display: none">
+        <h2>Rückgabe- und Umtauschrichtlinien</h2>
+        <p>
+          Wir bei Technikequipment.ch möchten sicherstellen, dass Sie mit Ihrem
+          Einkauf rundum zufrieden sind. Falls Sie dennoch einen Artikel
+          zurückgeben möchten, beachten Sie bitte, dass wir die Kosten für den
+          Rückversand nicht übernehmen können. Bitte stellen Sie sicher, dass
+          die Ware unbenutzt ist und sich in der Originalverpackung befindet, um
+          eine reibungslose Abwicklung der Rückgabe zu gewährleisten.
+          Kontaktieren Sie uns gerne unter
+          <a href="mailto:technikequipment@gmail.com"
+            >technikequipment@gmail.com</a
+          >
+          für weitere Anweisungen und Unterstützung bei Rückgaben oder
+          Umtäuschen. Unser Ziel ist es, Ihnen ein erstklassiges
+          Einkaufserlebnis zu bieten, und wir sind stets bemüht, Ihre
+          Erwartungen zu erfüllen.
+        </p>
+      </section>
+
+      <section id="rating" class="content-section" style="display: none">
+        <h2>Bewertungen</h2>
+        <p>super toll</p>
+      </section>
+
+      <section id="blog" class="content-section" style="display: none">
+        <h2>Blog</h2>
+        <p>Unboxing Videos</p>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li><a href="#about" onclick="showSection('about')">Über uns</a></li>
+          <li>
+            <a href="#contact" onclick="showSection('contact')">Kontakt</a>
+          </li>
+          <li><a href="#faq" onclick="showSection('faq')">FAQ</a></li>
+          <li>
+            <a href="#shipping" onclick="showSection('shipping')"
+              >Versandinformationen</a
+            >
+          </li>
+          <li>
+            <a href="#return" onclick="showSection('return')"
+              >Rückgabe- und Umtauschrichtlinien</a
+            >
+          </li>
+          <li>
+            <a href="#rating" onclick="showSection('rating')">Bewertungen</a>
+          </li>
+          <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+        </ul>
+      </nav>
+      <p>&copy; 2024 Technikequipment</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
